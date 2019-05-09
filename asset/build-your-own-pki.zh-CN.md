@@ -124,5 +124,5 @@ localhost-pk.der
 localhost-pk.pfx
 ```
 
-注意后缀`.cer`代表DER编码的不含私钥的证书，`.pfx`代表含私钥的证书文件。
+注意后缀`.der`代表DER编码的不含私钥的证书，`.pfx`代表含私钥的证书文件。
 

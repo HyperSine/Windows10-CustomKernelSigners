@@ -65,12 +65,12 @@ localhost-pk.pfx
 
    ```
    uefi.allowAuthBypass = "TRUE"
-   uefi.secureBoot.PKDefault.file0 = "localhost-pk.cer"
+   uefi.secureBoot.PKDefault.file0 = "localhost-pk.der"
    ```
 
    第一句允许你在虚拟机UEFI设置中管理SecureBoot keys。
 
-   第二句指定虚拟机目录下`localhost-pk.cer`文件为UEFI的默认PK。如果该文件不在虚拟机目录下，请将文件名替换为全路径。
+   第二句指定虚拟机目录下`localhost-pk.der`文件为UEFI的默认PK。如果该文件不在虚拟机目录下，请将文件名替换为全路径。
 
 完成后，启动`TestVM`即可导入PK。
 
@@ -86,10 +86,10 @@ localhost-pk.pfx
 
    此举会扫描整个System32目录，可能会耗费一段时间。如果你不想扫描，你可以用我准备好的[SiPolicy.xml](asset/SiPolicy.xml)文件。
 
-2. 针对新生成的`SiPolicy.xml`，使用`Add-SignerRule`添加我们自己的内核代码证书`localhost-km.cer`。
+2. 针对新生成的`SiPolicy.xml`，使用`Add-SignerRule`添加我们自己的内核代码证书`localhost-km.der`。
 
    ```powershell
-   Add-SignerRule -FilePath .\SiPolicy.xml -CertificatePath .\localhost-km.cer -Kernel
+   Add-SignerRule -FilePath .\SiPolicy.xml -CertificatePath .\localhost-km.der -Kernel
    ```
 
 3. 使用`ConvertFrom-CIPolicy`将`SiPolicy.xml`序列化，得到二进制的`SiPolicy.bin`
@@ -161,7 +161,7 @@ CodeIntegrity-AllowConfigurablePolicy-CustomKernelSigners
 这个驱动是没有签名的，你必须完成签名后才能加载。
 
 ```
-signtool sign /fd sha256 /ac .\localhost-root-ca.cer /f .\localhost-km.pfx /p <localhost-km.pfx的密码> /tr http://sha256timestamp.ws.symantec.com/sha256/timestamp ckspdrv.sys
+signtool sign /fd sha256 /ac .\localhost-root-ca.der /f .\localhost-km.pfx /p <localhost-km.pfx的密码> /tr http://sha256timestamp.ws.symantec.com/sha256/timestamp ckspdrv.sys
 ```
 
 __注意在`/p`后填写`localhost-km.pfx`的密码。__
