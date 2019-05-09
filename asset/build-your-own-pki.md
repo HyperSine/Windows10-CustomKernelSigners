@@ -64,7 +64,7 @@ $cert_params = @{
     Subject = 'CN=Localhost Kernel Mode Driver Certificate'
     FriendlyName = 'Localhost Kernel Mode Driver Certificate'
     TextExtension = '2.5.29.19={text}CA=0'
-    Signer = $intermediate_cert
+    Signer = $root_cert
     HashAlgorithm = 'sha256'
     KeyLength = 2048
     KeyAlgorithm = 'RSA'
@@ -122,5 +122,5 @@ localhost-pk.der
 localhost-pk.pfx
 ```
 
-Note that `*.cer` are DER-encoded certificate files without private key. And `*.pfx` are certificate files with private key.
+Note that `*.der` are DER-encoded certificate files without private key. And `*.pfx` are certificate files with private key.
 
