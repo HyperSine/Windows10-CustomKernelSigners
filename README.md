@@ -65,12 +65,12 @@ If your VMware virtual machine's name is `TestVM` and your vm has SecureBoot, th
 
    ```
    uefi.allowAuthBypass = "TRUE"
-   uefi.secureBoot.PKDefault.file0 = "localhost-pk.cer"
+   uefi.secureBoot.PKDefault.file0 = "localhost-pk.der"
    ```
 
    The first line allows you manage SecureBoot keys in UEFI firmware.
 
-   The second line will make `localhost-pk.cer` in vm's folder as default UEFI PK. If `localhost-pk.cer` is not in vm's folder, please specify a full path.
+   The second line will make `localhost-pk.der` in vm's folder as default UEFI PK. If `localhost-pk.der` is not in vm's folder, please specify a full path.
 
 Then start `TestVM` and your PK has been set.
 
@@ -78,7 +78,7 @@ Then start `TestVM` and your PK has been set.
 
 Run Powershell as administrator in Windows10 Enterprise/Education edition.
 
-1. Use `New-CIPolicy` to create new CI(Code Integerity) policy. Please make sure that the OS is not affected with any malware.
+1. Use `New-CIPolicy` to create new CI (Code Integrity) policy. Please make sure that the OS is not affected with any malware.
 
    ```powershell
    New-CIPolicy -FilePath SiPolicy.xml -Level RootCertificate -ScanPath C:\windows\System32\
@@ -89,7 +89,7 @@ Run Powershell as administrator in Windows10 Enterprise/Education edition.
 2. Use `Add-SignerRule` to add our own kernel code-sign certificate to `SiPolicy.xml`.
 
    ```powershell
-   Add-SignerRule -FilePath .\SiPolicy.xml -CertificatePath .\localhost-km.cer -Kernel
+   Add-SignerRule -FilePath .\SiPolicy.xml -CertificatePath .\localhost-km.der -Kernel
    ```
 
 3. Use `ConvertFrom-CIPolicy` to serialize `SiPolicy.xml` and get binary file `SiPolicy.bin`
@@ -159,7 +159,7 @@ So we have to load a driver to call `ExUpdateLicenseData` continuously to persis
 `ckspdrv.sys` is not signed. You must sign it with `localhost-km.pfx` so that it can be loaded into kernel.
 
 ```
-signtool sign /fd sha256 /ac .\localhost-root-ca.cer /f .\localhost-km.pfx /p <password of localhost-km.pfx> /tr http://sha256timestamp.ws.symantec.com/sha256/timestamp ckspdrv.sys
+signtool sign /fd sha256 /ac .\localhost-root-ca.der /f .\localhost-km.pfx /p <password of localhost-km.pfx> /tr http://sha256timestamp.ws.symantec.com/sha256/timestamp ckspdrv.sys
 ```
 
 __Please fill `<password of localhost-km.pfx>` with password of your `localhost-km.pfx`.__
