@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustomKernelSignersPersistent", "CustomKernelSignersPersistent\CustomKernelSignersPersistent.vcxproj", "{912F26A3-E2FA-4503-AF55-1980A05845E1}"
 EndProject
@@ -9,34 +9,28 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnableCustomKernelSigners",
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
-		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Debug|x64.ActiveCfg = Debug|x64
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Debug|x64.Build.0 = Debug|x64
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Debug|x64.Deploy.0 = Debug|x64
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Debug|x86.ActiveCfg = Debug|Win32
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Debug|x86.Build.0 = Debug|Win32
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Debug|x86.Deploy.0 = Debug|Win32
-		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Release|Any CPU.ActiveCfg = Release|Win32
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Release|x64.ActiveCfg = Release|x64
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Release|x64.Build.0 = Release|x64
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Release|x64.Deploy.0 = Release|x64
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Release|x86.ActiveCfg = Release|Win32
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Release|x86.Build.0 = Release|Win32
 		{912F26A3-E2FA-4503-AF55-1980A05845E1}.Release|x86.Deploy.0 = Release|Win32
-		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Debug|x64.ActiveCfg = Debug|x64
 		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Debug|x64.Build.0 = Debug|x64
 		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Debug|x86.ActiveCfg = Debug|Win32
 		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Debug|x86.Build.0 = Debug|Win32
-		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Release|Any CPU.ActiveCfg = Release|Win32
 		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Release|x64.ActiveCfg = Release|x64
 		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Release|x64.Build.0 = Release|x64
 		{E999DB5C-1C05-4F3E-A9F9-E668C47B3546}.Release|x86.ActiveCfg = Release|Win32
