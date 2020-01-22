@@ -129,7 +129,7 @@ Although administrators can modify this value, the value will be reset immediate
 
 So we could only modify it when kernel has not finished initialization. Do we have a chance? Yes, Windows Setup Mode can give us a chance.
 
-I've built a program to help us enable __CKS__. The code in under `EnableCustomKernelSigners` folder and the binary executable file `EnableCKS.exe` can be downloaded on [release](https://github.com/DoubleLabyrinth/Windows10-CustomKernelSigners/releases) page. Of course, you can build it with your own.
+I've built a program to help us enable __CKS__. The code in under `EnableCustomKernelSigners` folder and the binary executable file `EnableCKS.exe` can be downloaded on [release](https://github.com/HyperSine/Windows10-CustomKernelSigners/releases) page. Of course, you can build it with your own.
 
 Double click `EnableCKS.exe` and you can see
 
@@ -154,7 +154,7 @@ Finally, system will reboot again and go back to normal mode.
 
 Now you should be able to load drivers signed by `localhost-km.pfx`. But wait for a minute. Within 10 minutes, __CKS__ will be reset to disable by `sppsvc` except when you have Windows10 China Government Edition. Don't worry, it takes effect only next time system starts up.
 
-So we have to load a driver to call `ExUpdateLicenseData` continuously to persist __CKS__. I've built a driver named `ckspdrv.sys` which can be downloaded on [release](https://github.com/DoubleLabyrinth/Windows10-CustomKernelSigners/releases) page. The code is in `CustomKernelSignersPersistent` folder.
+So we have to load a driver to call `ExUpdateLicenseData` continuously to persist __CKS__. I've built a driver named `ckspdrv.sys` which can be downloaded on [release](https://github.com/HyperSine/Windows10-CustomKernelSigners/releases) page. The code is in `CustomKernelSignersPersistent` folder.
 
 `ckspdrv.sys` is not signed. You must sign it with `localhost-km.pfx` so that it can be loaded into kernel.
 

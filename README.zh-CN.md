@@ -129,7 +129,7 @@ __CKS__ 的开关保存在`HKLM\SYSTEM\CurrentControlSet\Control\ProductOptions`
 
 所以我们只能在内核还尚未初始化完的时候修改 __CKS__ 开关。有这个机会吗？有，Windows的Setup Mode可以给我们提供这个机会。
 
-我已经写了一个程序来帮助我们打开 __CKS__，代码在`EnableCustomKernelSigners`文件夹下。二进制程序可以在[release](https://github.com/DoubleLabyrinth/Windows10-CustomKernelSigners/releases)中得到，或者你也可以自己编译。
+我已经写了一个程序来帮助我们打开 __CKS__，代码在`EnableCustomKernelSigners`文件夹下。二进制程序可以在[release](https://github.com/HyperSine/Windows10-CustomKernelSigners/releases)中得到，或者你也可以自己编译。
 
 二进制程序是`EnableCKS.exe`，直接双击打开即可。打开后你应该能看到
 
@@ -156,7 +156,7 @@ CodeIntegrity-AllowConfigurablePolicy-CustomKernelSigners
 
 所以我们得趁这个机会，加载自己编写的驱动，通过不断调用`ExUpdateLicenseData`来持久化 __CKS__。
 
-这个驱动也可以在[release](https://github.com/DoubleLabyrinth/Windows10-CustomKernelSigners/releases)中得到，二进制文件为`ckspdrv.sys`，相应代码在`CustomKernelSignersPersistent`文件夹下。
+这个驱动也可以在[release](https://github.com/HyperSine/Windows10-CustomKernelSigners/releases)中得到，二进制文件为`ckspdrv.sys`，相应代码在`CustomKernelSignersPersistent`文件夹下。
 
 这个驱动是没有签名的，你必须完成签名后才能加载。
 
